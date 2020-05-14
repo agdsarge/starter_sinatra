@@ -1,8 +1,7 @@
 class SongsController < Sinatra::Base
 
     set :views, "app/views/songs"
-    set :method_override, true
-
+    
     get "/songs" do
         @songs = Song.all
         erb :index_song
@@ -14,6 +13,7 @@ class SongsController < Sinatra::Base
 
     post "/songs" do
         song = Song.create(title: params[:title], duration: params[:duration], genre: params[:genre])
+
         redirect "/songs/#{song.id}"
     end
 
@@ -28,7 +28,6 @@ class SongsController < Sinatra::Base
     end
 
     put "/songs/:id" do
-        binding.pry
         song = Song.find(params[:id])
         song.update(title: params[:title],
                         duration: params[:duration],
