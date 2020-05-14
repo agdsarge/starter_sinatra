@@ -1,0 +1,15 @@
+<h1>Edit this Artist's Entry</h1>
+
+<form action="/artists/<%= @artist.id %>" method="POST">
+    <input type="hidden" value="PUT" name="_method">
+    <label for="name">Name: </label>
+    <input type="text" name="name" value="<%= @artist.name %>"><br>
+
+    <label for="hometown">Hometown: </label>
+    <input type="text" name="hometown" value="<%= @artist.hometown %>"><br>
+
+    <label for="instrument">Instrument: </label>
+    <input type="text" name="instrument" value="<%= @artist.instrument %>"><br>
+
+    <input type="submit" value="Edit this artist's encyclopedia entry">
+ </form>
