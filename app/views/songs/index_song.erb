@@ -1,0 +1,10 @@
+<h1> Here are all the songs of the encyclopedia. </h1>
+
+<ol>
+    <% @songs.each do |sng| %>
+    <li><a href= "/songs/<%=sng.id%>">
+        <%= sng.title %>
+        </a>
+    </li>
+    <% end %>
+</ol>

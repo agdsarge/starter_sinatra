@@ -1,7 +1,10 @@
+<h1> Here are all the artists of the encyclopedia. </h1>
+
 <ol>
     <% @artists.each do |art| %>
-    <li>
+    <li><a href= "/artists/<%=art.id%>">
         <%= art.name %>
+        </a>
     </li>
     <% end %>
 </ol>

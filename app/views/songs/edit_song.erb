@@ -1,0 +1,15 @@
+<h1>Edit this song's entry</h1>
+<form action="/songs/<%= @song.id %>" method="POST"
+    <input type="hidden" value="PUT" name="_method">
+    <label for="title">Title: </label>
+    <input type="text" title="title" value="<%= @song.title %>"><br>
+
+    <label for="duration">Duration: </label>
+    <input type="text" title="duration" value="<%= @song.duration %>"><br>
+
+    <label for="genre">Genre: </label>
+    <input type="text" title="genre" value="<%= @song.genre %>"><br>
+
+    <input type="submit" value="Edit this song's encyclopedia entry">
+
+</form>

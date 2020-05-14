@@ -19,7 +19,6 @@ class ArtistsController < Sinatra::Base
 
     get "/artists/:id/edit" do
         @artist = Artist.find(params[:id])
-
         erb :edit_artist
     end
 
@@ -40,6 +39,5 @@ class ArtistsController < Sinatra::Base
         Artist.delete(params[:id])
         redirect "/artists"
     end
-
 
 end

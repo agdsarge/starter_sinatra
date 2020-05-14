@@ -1,0 +1,13 @@
+<h1><%= @song.title %></h1>
+
+<p><%=@song.title%> is <%=@song.duration%> seconds long and is a <%=@song.genre%> song. </p>
+
+
+
+<a href="/songs/<%=@song.id%>/edit">Edit this information</a>
+<br>
+<br>
+<form action="/songs/<%=@song.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this song from the encyclopedia">
+</form>
