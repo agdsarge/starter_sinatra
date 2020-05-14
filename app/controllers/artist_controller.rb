@@ -22,6 +22,16 @@ class ArtistsController < Sinatra::Base
         erb :edit_artist
     end
 
+    get "/artists/:id/songs/new" do
+        @artist = Artist.find(params[:id])
+        @songs = Song.all
+        erb :add_song_to_artist
+    end
+
+    post "/artists/:id/songs/" do
+        
+    end
+
     get "/artists/:id" do
         @artist = Artist.find(params[:id])
         erb :show_artist

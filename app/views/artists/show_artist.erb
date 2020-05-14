@@ -3,9 +3,22 @@
 <p><%=@artist.name%> is from <%=@artist.hometown%> and their primary instrument is <%=@artist.instrument%>.</p>
 
 <a href="/artists/<%=@artist.id%>/edit">Edit this information</a>
+
+<form action="/artists/<%=@artist.id%>/songs/new" method="POST">
+    <input type="submit" value="Add a song for this artist">
+</form>
 <br>
 <br>
 <form action="/artists/<%=@artist.id%>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete this artist from encyclopedia">
 </form>
+<br>
+<br>
+<ul>
+    <% @artist.songs.each do |song|%>
+        <a href="/songs/<%= song.id %>">
+             <li><%= song.title %></li>
+        </a>
+    <% end %>
+</ul>
