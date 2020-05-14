@@ -3,6 +3,11 @@ class ArtistsController < Sinatra::Base
     set :views, "app/views/artists"
     set :method_override, true
 
+    get "/artists" do
+        @artists = Artist.all
+        erb :index_artist
+    end
+
     get "/artists/new" do
         erb :new_artist
     end
@@ -30,5 +35,11 @@ class ArtistsController < Sinatra::Base
                         instrument: params[:instrument])
         redirect "/artists/#{artist.id}"
     end
+
+    delete "/artists/:id" do
+        Artist.delete(params[:id])
+        redirect "/artists"
+    end
+
 
 end
